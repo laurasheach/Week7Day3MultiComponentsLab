@@ -2,7 +2,8 @@
   <div id="app">
     <h1>Countries of the World</h1>
       <div class="main-container">
-        <countries-list :countries='countries'></countries-list>
+        <!-- <countries-list :countries='countries'></countries-list> -->
+        <country-select :countries='countries'></country-select>
         <country-detail :country='selectedCountry'></country-detail>
       </div>
   </div>
@@ -10,8 +11,9 @@
 
 <script>
 import {eventBus} from './main.js';
-import CountriesList from './components/CountriesList.vue';
+// import CountriesList from './components/CountriesList.vue';
 import CountryDetail from './components/CountryDetail.vue';
+import CountrySelect from './components/CountrySelect.vue';
 export default {
   name: 'app',
   data(){
@@ -21,7 +23,8 @@ export default {
     };
   },
   components: {
-    "countries-list": CountriesList,
+    // "countries-list": CountriesList,
+    "country-select": CountrySelect,
     "country-detail": CountryDetail
   },
   mounted(){
@@ -44,4 +47,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+ul {
+    list-style-type: none;
+}
+
 </style>
